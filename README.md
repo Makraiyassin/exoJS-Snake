@@ -34,9 +34,11 @@ Variable : TRY AGAIN
 Le serpent qui avance dans le carré avec les directions ( let right/ let left/ let up/ let down )
 
 L’apparition de la pomme aléatoirement dans le carré : AFFICHER apple SI apple est active ALORS apple s’affiche ALÉATOIREMENT (random)  
+
 apple = Math.floor (Math.random () * .length)]
 
 Dès que le serpent touche le border il meurt (afficher un GAME OVER et un TRY AGAIN) : 
+
 Dès que le serpent touche son propre corps il meurt (afficher un GAME OVER et un TRY AGAIN) :
 
 Le serpent qui s’allonge dès qu’il mange une pomme :  AFFICHER snake SI snake mange une apple ALORS snake s’allonge à l’INFINIE 
@@ -45,11 +47,15 @@ Le serpent qui s’allonge dès qu’il mange une pomme :  AFFICHER snake SI sna
 ### Html :
 
 Nous aurons un carré de 600px sur 600px avec une bordure solid autour de 5px
+
 <canvas id="canvas" width="600" height="600"></canvas>
 
 Set them to numeric values in JavaScript code to resize your canvas
+
 var canvas = document.getElementsByTagName('canvas')[0]; 
+
 canvas.width = 600;
+
 canvas.height = 600;
 
 
