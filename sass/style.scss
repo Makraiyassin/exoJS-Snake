@@ -2,8 +2,9 @@ body{
     background-color: rgb(255, 242, 233);
 }
 
-#canvas{
-    width: 500px; 
-    height: 500px; 
+#snake{
+    width: 60%; 
+    height: 500px;
+    margin: auto;
     border: solid rgb(43, 43, 43) 5px;
 }
