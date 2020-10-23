@@ -17,13 +17,17 @@
   grid-row-gap: 0px;
 }
 #canvas #snake {
-  grid-area: 5/5/6/6;
+
+  position: relative;
+  grid-area: 5/5/6/8;
   background-color: #f60707;
+  border-radius: 10%;
 }
 #canvas #apple {
+  position: relative;
   grid-area: 10/10/11/11;
-  background-color: #16c716;
-  border-radius: 50%;
+  border-radius: 60%;
+  background-image: url(/img/pomme.png);
 }
 
 /*# sourceMappingURL=style.css.map */
