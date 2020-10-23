@@ -1,7 +1,7 @@
 #score {
   color: #2b2b2b;
-  float: left;
-  margin: 50px;
+  width: 300px;
+  margin: auto;
 }
 
 #canvas {
@@ -17,17 +17,14 @@
   grid-row-gap: 0px;
 }
 #canvas #snake {
-
-  position: relative;
   grid-area: 5/5/6/8;
   background-color: #f60707;
   border-radius: 10%;
 }
 #canvas #apple {
-  position: relative;
   grid-area: 10/10/11/11;
-  border-radius: 60%;
-  background-image: url(/img/pomme.png);
+  background-color: green;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
