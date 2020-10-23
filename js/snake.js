@@ -3,8 +3,9 @@ const canvas = document.getElementById("canvas");
 const snake = document.getElementById("snake");
 const apple = document.getElementById("apple");
 
-
-
+function move() {
+    
+}
 
 
 
