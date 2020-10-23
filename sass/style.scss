@@ -1,37 +1,37 @@
 
-#score{
+#score {
     color: rgb(43, 43, 43);
-    float: left;
-    margin: 50px;
+    width: 300px;
+    margin: auto;
 }
 
-#canvas{
-    width: 600px; 
-    height: 600px;
-    margin: auto; 
+#canvas {
+    width: 600px;
+    height: 510px;
+    margin: auto;
     border: solid rgb(43, 43, 43) 5px;
     background-color: rgb(255, 242, 233);
-
     display: grid;
     grid-template-columns: repeat(20, 30px);
-    grid-template-rows: repeat(20, 30px);
+    grid-template-rows: repeat(17, 30px);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 
-    #snake { 
-        position: relative;
+    #snake{ 
         grid-area: 5 / 5 / 6 / 8; 
         background-color: rgb(246, 7, 7);
-        
         border-radius: 10%;
     }
-    #apple { 
-        position: relative;
+    #apple{ 
         grid-area: 10 / 10 / 11 / 11; 
-        border-radius: 60%;
-        background-image: url("pomme.png");
+        // background-color: green;
+        // border-radius: 50%;
+        background-image: url(../images/JS6.png);    
     }
-
 }
 
+
+body{
+    background-image: url(../images/waves.svg);
+}
 
