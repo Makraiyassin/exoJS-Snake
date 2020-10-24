@@ -1,18 +1,34 @@
 #score {
   color: #2b2b2b;
-  width: 300px;
-  margin: auto;
+  margin: 270px 0px 0px 210px;
+  width: 200px;
+  height: 150px;
+  background-image: url(../images/pancarte.png);
+  float: left;
+}
+#score #score2 {
+  padding: 15px 50px;
+}
+#score #score2 h1 {
+  color: #5c3708;
+  margin: 45px 15% 0px;
+}
+#score #score2 h2 {
+  color: #570202;
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0 50%;
 }
 
 #canvas {
   width: 600px;
-  height: 510px;
-  margin: auto;
+  height: 600px;
+  margin: 0% 33%;
   border: solid #2b2b2b 5px;
   background-color: #fff2e9;
   display: grid;
   grid-template-columns: repeat(20, 30px);
-  grid-template-rows: repeat(17, 30px);
+  grid-template-rows: repeat(20, 30px);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
@@ -27,7 +43,7 @@
 }
 
 body {
-  background-image: url(../images/waves.svg);
+  background-image: url(../images/bg2.svg);
 }
 
 /*# sourceMappingURL=style.css.map */
