@@ -1,3 +1,4 @@
+
 let score = document.getElementById("score");
 let canvas = document.getElementById("canvas");
 let snake = document.getElementById("snake");
@@ -16,6 +17,7 @@ function randapple() {
 apple = randapple();
 
 // console.log(x,y);
+
 
 
 
