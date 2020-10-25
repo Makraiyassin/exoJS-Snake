@@ -5,19 +5,13 @@
   height: 150px;
   background-image: url(../images/pancarte.png);
   float: left;
+  font-family: "Black Ops One", cursive;
+  color: #3a3a3a;
 }
-#score #score2 {
-  padding: 15px 50px;
-}
-#score #score2 h1 {
-  color: #5c3708;
-  margin: 45px 15% 0px;
-}
-#score #score2 h2 {
-  color: #570202;
-  font-size: 35px;
-  font-weight: bold;
-  margin: 0 50%;
+#score p {
+  text-align: center;
+  margin-top: 65px;
+  font-size: 34px;
 }
 
 #canvas {
