@@ -3,15 +3,11 @@ let canvas = document.getElementById("canvas");
 let snake = document.getElementById("snake");
 let apple = document.getElementById("apple");
 
-// function move() {
-    
-// }
-
 function randapple() {
     let x = Math.floor(Math.random()*20)+1
     let y = Math.floor(Math.random()*20)+1
 
-    return document.getElementById("apple").style.gridArea= x+"/"+y+"/"+(x+1)+"/"+(y+1);
+    return apple.style.gridArea= x+"/"+y+"/"+(x+1)+"/"+(y+1);
 } 
 apple = randapple();
 
