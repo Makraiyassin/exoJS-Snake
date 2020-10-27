@@ -12,14 +12,19 @@
 #score p {
   text-align: center;
   margin-top: 65px;
+  margin-bottom: 0px;
   font-size: 34px;
 }
+#score #num {
+  margin-top: 0px;
+}
 
-#canvas {
+#grid {
   width: 600px;
   height: 600px;
   margin: 0% 33%;
   border: solid #2b2b2b 5px;
+  border-radius: 2%;
   background-color: #fff2e9;
   display: grid;
   grid-template-columns: repeat(20, 30px);
@@ -28,16 +33,14 @@
   grid-row-gap: 0px;
 }
 
-#canvas #snake {
-
+#grid #snake {
   grid-area: 1/1;
-
   background-color: #f60707;
   border-radius: 10%;
 }
+#grid #apple {
+  grid-area: 10/10;
 
-#canvas #apple {
-  grid-area: 10 / 10 / 11 / 11;
   background-image: url(../images/JS6.png);
 }
 
