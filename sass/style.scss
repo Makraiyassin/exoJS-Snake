@@ -26,8 +26,10 @@
     grid-template-rows: repeat(20, 30px);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    #snake {
-        grid-area: 5 / 5 / 6 / 8;
+
+
+    #snake{ 
+        grid-area: 1/1; 
         background-color: rgb(246, 7, 7);
         border-radius: 10%;
     }
