@@ -1,4 +1,4 @@
-
+// the game 
 #score {
     color: rgb(43, 43, 43);
     margin: 270px 0px 0px 210px;
@@ -7,8 +7,8 @@
     background-image: url(../images/pancarte.png);
     float: left;
     font-family: 'Black Ops One', cursive;
-    color: #3a3a3a;    
-    p{
+    color: #3a3a3a;
+    p {
         text-align: center;
         margin-top: 65px;
         font-size: 34px;
@@ -27,16 +27,19 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 
+
     #snake{ 
         grid-area: 1/1; 
         background-color: rgb(246, 7, 7);
         border-radius: 10%;
     }
-    #apple{ 
-        grid-area: 10 / 10 / 11 / 11; 
-        background-image: url(../images/JS6.png);    
+    #apple {
+        grid-area: 10 / 10 / 11 / 11;
+        background-image: url(../images/JS6.png);
     }
 }
-body{
+
+body {
     background-image: url(../images/bg2.svg);
+    background-size: cover;
 }
