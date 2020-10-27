@@ -1,14 +1,15 @@
 let score = document.getElementById("points");
-let canvas = document.getElementById("grid");
+let grid = document.getElementById("grid");
 let snake = document.getElementById("snake");
 let apple = document.getElementById("apple");
 
-// document.getElementById("snake").style.gridArea= 1/1/2/2;
-// document.getElementById("apple").style.gridArea= 5/5/6/6;
+// snake.style.gridArea= "1/1";
+// snake.style.gridArea= "5/5";
 
 
-const SPACE = 32 // Pause the gaem 
-const ESCAPE = 27 // Quit the game
+// const SPACE = 32 // Pause the gaem 
+// const ESCAPE = 27 // Quit the game
+
 let xrand;
 let yrand;
 let xdir = 1;
