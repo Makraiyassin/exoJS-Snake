@@ -18,6 +18,23 @@ apple = randapple();
 
 // console.log(x,y);
 
+//
+x = 1
+y = 1
+let direction = "left"
+
+setInterval(function(){ 
+    if(direction === "right"){
+        if(y === 20){
+            engame()    
+        }
+        y += 1
+        snake.style.gridArea = x + "/" + y
+    }
+    
+}, 20);
+
+
 
 
 
