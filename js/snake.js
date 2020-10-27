@@ -11,11 +11,6 @@ const RIGHT_KEY = 39;
 const UP_KEY = 38;
 const DOWN_KEY = 40;
 
-// adding direction of the snake
-let leftDirection = false;
-let rightDirection = true;
-let upDirection = false;
-let downDirection = false;
 
 
 
