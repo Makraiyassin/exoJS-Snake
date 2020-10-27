@@ -3,6 +3,13 @@ let canvas = document.getElementById("canvas");
 let snake = document.getElementById("snake");
 let apple = document.getElementById("apple");
 
+const LEFT_KEY = 37;
+const RIGHT_KEY = 39;
+const UP_KEY = 38;
+const DOWN_KEY = 40;
+const SPACE = 32 // Pause the gaem 
+const ESCAPE = 27 // Quit the game
+
 // function move() {
 
 // }
