@@ -1,38 +1,42 @@
-let score = document.getElementById("num");
+let score = document.getElementById("points");
 let canvas = document.getElementById("grid");
 let snake = document.getElementById("snake");
 let apple = document.getElementById("apple");
 
-// const SPACE = 32 // Pause the gaem 
-// const ESCAPE = 27 // Quit the game
+// document.getElementById("snake").style.gridArea= 1/1/2/2;
+// document.getElementById("apple").style.gridArea= 5/5/6/6;
 
+
+const SPACE = 32 // Pause the gaem 
+const ESCAPE = 27 // Quit the game
 let xrand;
 let yrand;
-let xdir = 1
-let ydir = 1
+let xdir = 1;
+let ydir = 1;
+let direction = "right";
 
+let points = 1;
+
+let vitesse = 200;
 
 function randapple() {
     xrand = Math.floor(Math.random() * 20) + 1
     yrand = Math.floor(Math.random() * 20) + 1
 
-    return document.getElementById("apple").style.gridArea= xrand+"/"+yrand;
+    document.getElementById("apple").style.gridArea= xrand+"/"+yrand;
 } 
 
 apple = randapple();
 
-// console.log(x,y);
-
-//
-// function gameOver() {
-//     alert("le jeu est terminé")
-// }
+function gameOver() {
+    alert("le jeu est terminé")
+}
 
 
-let direction = "right"
+
 
 setInterval(function(){ 
-    eat(xdir, ydir)
+    eat()
     if(direction === "right"){
         if(ydir === 21){
            // gameOver() 
@@ -65,7 +69,7 @@ setInterval(function(){
         xdir = xdir - 1
         snake.style.gridArea = xdir + "/" + ydir
     }
-}, 200);
+}, vitesse);
 
 
 window.addEventListener("keydown", event => {
@@ -81,26 +85,14 @@ window.addEventListener("keydown", event => {
     if (event.keyCode === 40 && direction != "up") {
         direction = "down"
     }
-    // do something (event.isComposing || )
 });
-
-// function eat (){
-//     if (snake === apple){
-//         alert()
-//         // let x = 0
-//         // score.innerHTML = x+1
-//         // randapple()
-//     }
-// }
-// let xx = 2;
-// document.getElementById("num").innerHTML = xx;
-let i = 1
 function eat (){
     if ((xdir == xrand) && (ydir == yrand)) {
-        // alert()
-        document.getElementById("num").innerHTML = i++;
+        score.innerHTML = points++;
         randapple();
-    }}
+        // vitesse-= 180;
+    }
+}
 
 
 
