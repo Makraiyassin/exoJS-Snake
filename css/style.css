@@ -5,17 +5,16 @@
   height: 150px;
   background-image: url(../images/pancarte.png);
   float: left;
-  font-family: 'Black Ops One', cursive;
+  font-family: "Black Ops One", cursive;
   color: #3a3a3a;
 }
-
 #score p {
   text-align: center;
   margin-top: 65px;
   margin-bottom: 0px;
   font-size: 34px;
 }
-#score #num {
+#score #points {
   margin-top: 0px;
 }
 
@@ -32,15 +31,11 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-
 #grid #snake {
-  grid-area: 1/1;
   background-color: #f60707;
   border-radius: 10%;
 }
 #grid #apple {
-  grid-area: 10/10;
-
   background-image: url(../images/JS6.png);
 }
 
@@ -48,3 +43,5 @@ body {
   background-image: url(../images/bg2.svg);
   background-size: cover;
 }
+
+/*# sourceMappingURL=style.css.map */
