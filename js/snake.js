@@ -1,22 +1,39 @@
-
 let score = document.getElementById("score");
 let canvas = document.getElementById("grid");
 let snake = document.getElementById("snake");
 let apple = document.getElementById("apple");
 
 // function move() {
-    
+
 // }
 
 function randapple() {
-    let x = Math.floor(Math.random()*20)+1
-    let y = Math.floor(Math.random()*20)+1
+    let x = Math.floor(Math.random() * 20) + 1
+    let y = Math.floor(Math.random() * 20) + 1
 
     return document.getElementById("apple").style.gridArea= x+"/"+y;
 } 
+
 apple = randapple();
 
 // console.log(x,y);
+
+//
+x = 1
+y = 1
+let direction = "left"
+
+setInterval(function(){ 
+    if(direction === "right"){
+        if(y === 20){
+            engame()    
+        }
+        y += 1
+        snake.style.gridArea = x + "/" + y
+    }
+    
+}, 20);
+
 
 
 
