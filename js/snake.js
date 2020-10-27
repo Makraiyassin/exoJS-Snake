@@ -3,18 +3,20 @@ let canvas = document.getElementById("grid");
 let snake = document.getElementById("snake");
 let apple = document.getElementById("apple");
 
-const SPACE = 32 // Pause the gaem 
-const ESCAPE = 27 // Quit the game
+// const SPACE = 32 // Pause the gaem 
+// const ESCAPE = 27 // Quit the game
 
-// function move() {
+let xrand;
+let yrand;
+let xdir = 1
+let ydir = 1
 
-// }
 
 function randapple() {
-    let x = Math.floor(Math.random() * 20) + 1
-    let y = Math.floor(Math.random() * 20) + 1
+    xrand = Math.floor(Math.random() * 20) + 1
+    yrand = Math.floor(Math.random() * 20) + 1
 
-    return document.getElementById("apple").style.gridArea= x+"/"+y;
+    return document.getElementById("apple").style.gridArea= xrand+"/"+yrand;
 } 
 
 apple = randapple();
@@ -22,48 +24,46 @@ apple = randapple();
 // console.log(x,y);
 
 //
-let x = 1
-let y = 1
+// function gameOver() {
+//     alert("le jeu est terminé")
+// }
+
 
 let direction = "right"
 
-function gameOver() {
-    alert("le jeu est terminé")
-}
-
-
 setInterval(function(){ 
+    eat(xdir, ydir)
     if(direction === "right"){
-        if(y === 21){
+        if(ydir === 21){
            // gameOver() 
-            y = 0
+            ydir = 0
         }
-        y += 1;
-        snake.style.gridArea = x + "/" + y;
+        ydir += 1;
+        snake.style.gridArea = xdir + "/" + ydir;
     }
     if(direction === "left"){
-        if(y === -1){
+        if(ydir === 0){
            // gameOver() 
-            y=21   
+            ydir=21   
         }
-        y = y - 1
-        snake.style.gridArea = x + "/" + y
+        ydir= ydir- 1
+        snake.style.gridArea = xdir + "/" + ydir
     }
     if(direction === "down"){
-        if(x === 21){
+        if(xdir === 21){
            // gameOver() 
-            x=0   
+            xdir=0   
         }
-        x += 1
-        snake.style.gridArea = x + "/" + y
+        xdir += 1
+        snake.style.gridArea = xdir + "/" + ydir
     }
     if(direction === "up"){
-        if(x === -1){
+        if(xdir === 0){
            // gameOver() 
-            x=21   
+            xdir=21   
         }
-        x = x - 1
-        snake.style.gridArea = x + "/" + y
+        xdir = xdir - 1
+        snake.style.gridArea = xdir + "/" + ydir
     }
 }, 200);
 
@@ -82,7 +82,25 @@ window.addEventListener("keydown", event => {
         direction = "down"
     }
     // do something (event.isComposing || )
-  });
+});
+
+// function eat (){
+//     if (snake === apple){
+//         alert()
+//         // let x = 0
+//         // score.innerHTML = x+1
+//         // randapple()
+//     }
+// }
+// let xx = 2;
+// document.getElementById("num").innerHTML = xx;
+let i = 1
+function eat (){
+    if ((xdir == xrand) && (ydir == yrand)) {
+        // alert()
+        document.getElementById("num").innerHTML = i++;
+        randapple();
+    }}
 
 // (function eat (){
 //     if (snake== apple){
