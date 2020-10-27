@@ -1,12 +1,8 @@
-let score = document.getElementById("score");
+let score = document.getElementById("num");
 let canvas = document.getElementById("grid");
 let snake = document.getElementById("snake");
 let apple = document.getElementById("apple");
 
-const LEFT_KEY = 37;
-const RIGHT_KEY = 39;
-const UP_KEY = 38;
-const DOWN_KEY = 40;
 const SPACE = 32 // Pause the gaem 
 const ESCAPE = 27 // Quit the game
 
@@ -26,23 +22,75 @@ apple = randapple();
 // console.log(x,y);
 
 //
-x = 1
-y = 1
+let x = 1
+let y = 1
+
 let direction = "right"
+
+function gameOver() {
+    alert("le jeu est terminé")
+}
+
+
 setInterval(function(){ 
     if(direction === "right"){
         if(y === 21){
+           // gameOver() 
             y = 0
         }
-        y += 1
+        y += 1;
+        snake.style.gridArea = x + "/" + y;
+    }
+    if(direction === "left"){
+        if(y === -1){
+           // gameOver() 
+            y=21   
+        }
+        y = y - 1
         snake.style.gridArea = x + "/" + y
     }
-    
+    if(direction === "down"){
+        if(x === 21){
+           // gameOver() 
+            x=0   
+        }
+        x += 1
+        snake.style.gridArea = x + "/" + y
+    }
+    if(direction === "up"){
+        if(x === -1){
+           // gameOver() 
+            x=21   
+        }
+        x = x - 1
+        snake.style.gridArea = x + "/" + y
+    }
 }, 200);
 
 
+window.addEventListener("keydown", event => {
+    if (event.keyCode === 37 && direction != "right") {
+      direction = "left"
+    }
+    if (event.keyCode === 38 && direction != "down") {
+        direction = "up"
+    }
+    if (event.keyCode === 39 && direction != "left") {
+        direction = "right"
+    }
+    if (event.keyCode === 40 && direction != "up") {
+        direction = "down"
+    }
+    // do something (event.isComposing || )
+  });
 
-
+// (function eat (){
+//     if (snake== apple){
+//         score++
+//         randapple()
+//     }
+    
+// })();
 
 
 
