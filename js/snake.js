@@ -21,18 +21,19 @@ apple = randapple();
 //
 x = 1
 y = 1
-let direction = "left"
-
+let direction = "right"
 setInterval(function(){ 
     if(direction === "right"){
-        if(y === 20){
-            engame()    
+        if(y === 21){
+            y = 0
         }
         y += 1
         snake.style.gridArea = x + "/" + y
     }
     
-}, 20);
+}, 200);
+
+function 
 
 
 
