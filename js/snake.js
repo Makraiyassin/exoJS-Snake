@@ -94,6 +94,14 @@ function eat (){
     }
 }
 
+// (function eat (){
+//     if (snake== apple){
+//         score++
+//         randapple()
+//     }
+    
+// })();
+
 
 
 
