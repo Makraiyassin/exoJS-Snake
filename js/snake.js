@@ -1,24 +1,21 @@
-const score = document.getElementById("score");
-const canvas = document.getElementById("canvas");
-const snake = document.getElementById("snake");
-const apple = document.getElementById("apple");
-let = inGame = true; // if this condition not respected the game end.
-//to quit the game we need to set this var like this : inGame = false;
+let score = document.getElementById("score");
+let canvas = document.getElementById("canvas");
+let snake = document.getElementById("snake");
+let apple = document.getElementById("apple");
 
-// associate const to relative button on the keyboard
-const LEFT_KEY = 37;
-const RIGHT_KEY = 39;
-const UP_KEY = 38;
-const DOWN_KEY = 40;
+// function move() {
 
+// }
 
+function randapple() {
+    let x = Math.floor(Math.random() * 20) + 1
+    let y = Math.floor(Math.random() * 20) + 1
 
+    return document.getElementById("apple").style.gridArea = x + "/" + y + "/" + (x + 1) + "/" + (y + 1);
+}
+apple = randapple();
 
-function move() {
-
-
-};
-
+// console.log(x,y);
 
 
 

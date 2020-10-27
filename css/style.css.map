@@ -1,1 +1,7 @@
-{"version":3,"sourceRoot":"","sources":["../sass/style.scss"],"names":[],"mappings":"AACA;EACI;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;;AAEJ;EACI;EAGA;;;AAGR;EACI","file":"style.css"}
+<<<<<<< HEAD
+{"version":3,"sourceRoot":"","sources":["../sass/style.scss"],"names":[],"mappings":"AACA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AACA;EACI;EACA;EACA;;;AAIR;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;;AAEJ;EACI;EACA;;;AAGR;EACI","file":"style.css"}
+=======
+
+{"version":3,"sourceRoot":"","sources":["../sass/style.scss"],"names":[],"mappings":"AACA;EACI;EACA;EACA;EACA;EACA;EACA;;AACA;EACI;;AACA;EACI;EACA;;AACJ;EACI;EACA;EACA;EACA;;;AAKZ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;;AAEJ;EACI;EACA;;;AAGR;EACI","file":"style.css"}
+
+>>>>>>> a6877bac22b1dd0e32e8bb7a6a556d885c3b5540
