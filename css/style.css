@@ -14,7 +14,7 @@
   margin-bottom: 0px;
   font-size: 34px;
 }
-#score #num {
+#score #points {
   margin-top: 0px;
 }
 
@@ -32,7 +32,6 @@
   grid-row-gap: 0px;
 }
 #grid #snake {
-  grid-area: 1/1;
   background-color: #f60707;
   border-radius: 10%;
 }
