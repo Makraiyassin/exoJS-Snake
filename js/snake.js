@@ -3,75 +3,57 @@ let grid = document.getElementById("grid");
 let snake = document.getElementById("snake");
 let apple = document.getElementById("apple");
 
-// snake.style.gridArea= "1/1";
-// snake.style.gridArea= "5/5";
-
-
-// const SPACE = 32 // Pause the gaem 
-// const ESCAPE = 27 // Quit the game
-
 let xrand;
 let yrand;
+
 let xdir = 1;
 let ydir = 1;
+
 let direction = "right";
 
 let points = 1;
 
 let vitesse = 200;
 
-function randapple() {
-    xrand = Math.floor(Math.random() * 20) + 1
-    yrand = Math.floor(Math.random() * 20) + 1
-
-    document.getElementById("apple").style.gridArea= xrand+"/"+yrand;
-} 
-
-apple = randapple();
-
-function gameOver() {
-    alert("le jeu est terminé")
-}
-
-
-
+/* CONTENU DU JEU (AVANCE AUTOMATIQUE + APPEL DES DIFFERENTES FONCTION) */
 
 setInterval(function(){ 
     eat()
     if(direction === "right"){
-        if(ydir === 21){
-           // gameOver() 
-            ydir = 0
+        if(ydir === 20){                            //Pk pas 21???
+           gameOver() 
+            // ydir = 1
         }
         ydir += 1;
         snake.style.gridArea = xdir + "/" + ydir;
     }
     if(direction === "left"){
-        if(ydir === 0){
-           // gameOver() 
-            ydir=21   
+        if(ydir === 1){                             //Pk pas 0 ou -1???
+           gameOver() 
+            // ydir=20   
         }
-        ydir= ydir- 1
+        ydir -= 1
         snake.style.gridArea = xdir + "/" + ydir
     }
     if(direction === "down"){
-        if(xdir === 21){
-           // gameOver() 
-            xdir=0   
+        if(xdir === 20){                            //pk pas 21???
+           gameOver() 
+            // xdir=1   
         }
         xdir += 1
         snake.style.gridArea = xdir + "/" + ydir
     }
     if(direction === "up"){
-        if(xdir === 0){
-           // gameOver() 
-            xdir=21   
+        if(xdir === 1){                             //Pk pas 0 ou -1???
+           gameOver() 
+            // xdir=20   
         }
-        xdir = xdir - 1
+        xdir -= 1
         snake.style.gridArea = xdir + "/" + ydir
     }
-}, vitesse);
+}, vitesse)
 
+/* TOUCHES DIRECTIONS: */
 
 window.addEventListener("keydown", event => {
     if (event.keyCode === 37 && direction != "right") {
@@ -87,13 +69,38 @@ window.addEventListener("keydown", event => {
         direction = "down"
     }
 });
+
+/* FONCTION EAT (CE QUI SE PASSE AU MOMENT OU LE SERPENT MANGE UNE POMME) */
+
 function eat (){
     if ((xdir == xrand) && (ydir == yrand)) {
-        score.innerHTML = points++;
+        score.innerHTML = points ++;
         randapple();
-        // vitesse-= 180;
+        // vitesse= vitesse - 50;
+        // let body = document.(creer un élément body).style.gridArea= des paramettre qui vont faire que le body suis le mouvement de la tête (xdir-1+"/"+ydir-1);
     }
 }
+
+/*FONCTION SERVANT A FAIRE APPARAITRE LA POMME DANS UNE POSITION "RANDOM"*/
+
+function randapple() {
+    xrand = Math.floor(Math.random() * 20) + 1                  // => chiffre aléatoire entre 1 et 20
+    yrand = Math.floor(Math.random() * 20) + 1                  // => chiffre aléatoire entre 1 et 20
+
+    document.getElementById("apple").style.gridArea= xrand+"/"+yrand;
+} 
+
+apple = randapple();
+
+/*FONCTION GAME OVER (AFFICHE LE SCORE ET RELANCE LE JEU)*/
+
+function gameOver() {
+    alert("le jeu est terminé. \nVotre score est: "+ (points-1)) // j'ai mis "-1" car la variable points = 1 au lieu de 0 (pour des raisons d'affichage du score au long de la partie)
+    document.location.reload()
+}
+
+
+
 
 
 
@@ -107,7 +114,13 @@ function eat (){
 
 // _______________________________________________________________________________________
 
-// const context = canvas.getContext("2d"); //fonctionne pas ?
+// snake.style.gridArea= "1/1";
+// snake.style.gridArea= "5/5";
+
+// const SPACE = 32 // Pause the game 
+// const ESCAPE = 27 // Quit the game
+
+// const context = canvas.getContext("2d"); //
 
 // let score = 0;
 // let s;
@@ -143,3 +156,13 @@ function eat (){
 //     return apple
 // }
 // canvas.innerHTML = apple(x,y)
+
+
+/*FONCTION VITESSE (POUR L'AUGMENTER A CHAQUE FOIS QU'UNE POMME EST MANGER)  => NE FONCTIONNE PAS...*/
+
+// function vit() {
+//     if ((xdir == xrand) && (ydir == yrand)) {
+//         vitesse=vitesse-50;
+//      }
+// }
+// vitesse=vit();
