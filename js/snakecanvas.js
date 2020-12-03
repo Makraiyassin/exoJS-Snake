@@ -1,8 +1,10 @@
 
-const score = document.getElementById("points");
-
 const canvas= document.querySelector("#canvas");
 const contexte= canvas.getContext('2d');
+
+const score = document.getElementById("points");
+
+//IMAGE POMME, Vitesse , Points:
 
 let apple = new Image();  
 apple.src = 'images/JS6.png';
@@ -10,7 +12,9 @@ apple.src = 'images/JS6.png';
 let speed = 200;
 let points = 1;
 
-const grid= 30;
+const grid= 30; // la valeur de l'unité dans le jeux
+
+//CREATION DU SERPENT
 
 const snake= {
 
@@ -38,7 +42,7 @@ const snake= {
         contexte.fillStyle="red";
         
         for(let index of snake.corps){
-            contexte.fillRect(index.x, index.y, snake.tete.largeur-2,snake.tete.hauteur-2);
+            contexte.fillRect(index.x, index.y, snake.tete.largeur-2,snake.tete.hauteur-2);  //-2 (px) pour avoir un écart entre la tete et le corp ainsi qu'entre chaque nouvelle partie du corp
         }
     },
 
@@ -63,19 +67,13 @@ const snake= {
     },
 };
 
+//CREATION DE LA POMME
+
 const pomme= {
 
-    dimension:{
-        rayon: grid/2,
-    },
-
     afficher:()=>{
-        
         contexte.beginPath();
         contexte.drawImage(apple,pomme.position.x,pomme.position.y);
-        // contexte.arc(pomme.position.x+pomme.dimension.rayon,pomme.position.y+pomme.dimension.rayon,pomme.dimension.rayon,0,Math.PI*2);
-        // contexte.fillStyle= "green";
-        // contexte.fill();
         contexte.closePath(); 
     },
  
@@ -88,8 +86,9 @@ const pomme= {
         pomme.position.x=(Math.floor(Math.random()*(canvas.width/grid))*grid);
         pomme.position.y=(Math.floor(Math.random()*(canvas.height/grid))*grid);
     }
-
 }
+
+//fonction "game over" , permet de reinitialiser le jeu aux valeurs de depart
 
 const reinitialiser=()=>{
     snake.taille=1;
@@ -105,8 +104,10 @@ const reinitialiser=()=>{
     if(gameStarted===false){
         game(); 
     }
-    // document.location.reload()
+    // document.location.reload()  // <= actualise simplement la page
 }
+
+// Fonction de deroulement de jeu:
 
 function game (){
 
@@ -129,12 +130,14 @@ function game (){
     if(snake.position.x === pomme.position.x && snake.position.y === pomme.position.y){
         pomme.initialiser();
         snake.grandir();
-        score.innerHTML = points ++;
+        score.innerHTML = points++;
 
-        if(speed>=100){
+        if(speed>=150){
             speed-=10;
-        }else if(speed>=50) {
+        }else if(speed>=100) {
             speed-=5        
+        }else if(speed>=50) {
+            speed-=1        
         }
         
     }
@@ -142,6 +145,8 @@ function game (){
 }
 
 game()
+
+//Fonction qui determine les touches du clavier et leur effet:
 
 const clavier=(touche)=>{
     
@@ -171,7 +176,7 @@ const clavier=(touche)=>{
         case "Enter": reinitialiser();
             break;
 
-        case " ":
+        case " ": //pause
             snake.deplacement.x=0;
             snake.deplacement.y=0;
             break;
