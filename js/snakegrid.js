@@ -20,7 +20,7 @@ let vitesse = 200;
 setInterval(function(){ 
     eat()
     if(direction === "right"){
-        if(ydir === 20){                            //Pk pas 21???
+        if(ydir === 20){                            
            gameOver() 
             // ydir = 1
         }
@@ -28,7 +28,7 @@ setInterval(function(){
         snake.style.gridArea = xdir + "/" + ydir;
     }
     if(direction === "left"){
-        if(ydir === 1){                             //Pk pas 0 ou -1???
+        if(ydir === 1){                             
            gameOver() 
             // ydir=20   
         }
@@ -36,7 +36,7 @@ setInterval(function(){
         snake.style.gridArea = xdir + "/" + ydir
     }
     if(direction === "down"){
-        if(xdir === 20){                            //pk pas 21???
+        if(xdir === 20){                           
            gameOver() 
             // xdir=1   
         }
@@ -44,7 +44,7 @@ setInterval(function(){
         snake.style.gridArea = xdir + "/" + ydir
     }
     if(direction === "up"){
-        if(xdir === 1){                             //Pk pas 0 ou -1???
+        if(xdir === 1){                             
            gameOver() 
             // xdir=20   
         }
@@ -77,7 +77,6 @@ function eat (){
         score.innerHTML = points ++;
         randapple();
         // vitesse= vitesse - 50;
-        // let body = document.(creer un élément body).style.gridArea= des paramettre qui vont faire que le body suis le mouvement de la tête (xdir-1+"/"+ydir-1);
     }
 }
 
