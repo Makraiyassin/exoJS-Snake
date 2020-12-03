@@ -1,15 +1,7 @@
 
-#info{
-  text-align: center;
-  width: 200px;
-  float: left;
-  color: #5ef45e;
-  font-family: cursive;
-}
-
 #score {
   color: #2b2b2b;
-  margin: 270px 0px 0px 50px;
+  margin: 270px 0px 0px 210px;
   width: 200px;
   height: 150px;
   background-image: url(../images/pancarte.png);
