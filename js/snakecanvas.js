@@ -1,4 +1,3 @@
-
 const canvas= document.querySelector("#canvas");
 const contexte= canvas.getContext('2d');
 
@@ -40,9 +39,10 @@ const snake= {
     afficher:()=>{
         contexte.clearRect(0,0,canvas.width,canvas.height);
         contexte.fillStyle="red";
-        
+
         for(let index of snake.corps){
             contexte.fillRect(index.x, index.y, snake.tete.largeur-2,snake.tete.hauteur-2);  //-2 (px) pour avoir un écart entre la tete et le corp ainsi qu'entre chaque nouvelle partie du corp
+            contexte.fillStyle="#ff6767";
         }
     },
 
@@ -55,10 +55,10 @@ const snake= {
             y:snake.position.y,
         };
 
-        snake.corps.push(coordonees);
+        snake.corps.unshift(coordonees);
 
         while(snake.corps.length>snake.taille){
-            snake.corps.shift();
+            snake.corps.pop();
         };
     },
 
@@ -185,3 +185,8 @@ const clavier=(touche)=>{
 };
 
 window.addEventListener("keydown",clavier);
+
+
+window.addEventListener("load",function(){
+    alert("Les touches du jeux:\nappuyez sur une des touches directionnelles pour commencer le jeux et pour vous déplacer\nappuyez sur espace pour faire une pause\nappuyez sur entrer pour réinitialiser le jeu.")
+})
